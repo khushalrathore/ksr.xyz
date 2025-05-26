@@ -1,0 +1,157 @@
+@import url(./fonts.css);
+
+:root {
+  color-scheme: light dark;
+
+}
+
+body::-webkit-scrollbar {
+  width: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgb(133, 133, 133);
+  outline: 1px solid white;
+}
+
+[heading] {
+  opacity: 0;
+  filter: blur(10px);
+  font-family: "Baskervville", serif;
+  font-size: 3rem;
+  animation: inout 1s ease-out forwards;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: monospace !important;
+  font-optical-sizing: auto;
+  margin: 0;
+  padding: 0;
+  transition: all 250ms;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-synthesis: none;
+  scroll-behavior: smooth;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+a {
+  transition: all 250ms;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  border: none;
+  outline: none;
+}
+
+[paragraph] {
+  margin-top: 2rem;
+  max-width: 50ch;
+  font-size: 1.5rem;
+  color: light-dark(rgb(66, 66, 66), whitesmoke);
+  text-align: center;
+  font-family: "Baskervville", serif;
+  animation: inout2 1s ease-out forwards;
+  line-height: 2.5rem;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  cursor: pointer;
+
+
+  &::selection {
+    background-color: #00000018;
+    color: rgb(41, 41, 41);
+  }
+
+}
+
+[info] {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+[wrapper] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  margin-block: 1rem;
+
+  span {
+    text-align: center;
+
+    font-family: "Baskervville";
+    font-weight: 600;
+
+  }
+}
+
+.filtered {
+  filter: blur(5px);
+  opacity: 0.5;
+  content-visibility: hidden !important;
+}
+
+@media (max-width:40em) {
+  [paragraph] {
+    font-size: 1.25rem;
+    font-family: "Baskervville", serif;
+    max-width: 30ch !important;
+    text-align: center;
+  }
+}
+
+
+@keyframes inout {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+    filter: blur(10px);
+    font-family: "HNR" !important;
+
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(40px);
+    filter: blur(0);
+    font-family: monospace !important;
+  }
+}
+
+@keyframes inout2 {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+    filter: blur(10px);
+    font-family: "HNR" !important;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+    filter: blur(0);
+    font-family: monospace !important;
+  }
+}
